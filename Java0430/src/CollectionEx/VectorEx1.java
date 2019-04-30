@@ -112,6 +112,17 @@ public class VectorEx1 {
 			System.out.println(s3);
 		}
 		
+		System.out.println("------------------------");
+		
+		// 9. remove => "요소(데이터) 삭제"
+		v1.remove("SPRING");
+		
+		Iterator<String> iterator4 = v1.iterator();
+		while (iterator4.hasNext()) {
+			String s4 = iterator4.next();
+			System.out.println(s4);
+		}
+				
 	}
 	
 }
