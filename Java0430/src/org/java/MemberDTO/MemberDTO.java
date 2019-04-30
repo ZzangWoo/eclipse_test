@@ -10,6 +10,18 @@ public class MemberDTO {
 	public MemberDTO() {
 
 	}
+	
+	
+
+	public MemberDTO(String userID, String userPW, String userName, int userAge) {
+		super();
+		this.userID = userID;
+		this.userPW = userPW;
+		this.userName = userName;
+		this.userAge = userAge;
+	}
+
+
 
 	public String getUserID() {
 		return userID;
