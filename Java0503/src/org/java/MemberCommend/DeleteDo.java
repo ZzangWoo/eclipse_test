@@ -1,13 +1,15 @@
 package org.java.MemberCommend;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.java.MemberDAO.MemberDAO;
+import org.java.MemberDTO.MemberDTO;
 
 public class DeleteDo implements QueryCommend {
 
 	@Override
-	public void excuteCommend() {
+	public ArrayList<MemberDTO> excuteCommend(ArrayList<MemberDTO> lists) {
 		
 		MemberDAO dao = new MemberDAO();
 		Scanner scan = new Scanner(System.in);
@@ -18,13 +20,16 @@ public class DeleteDo implements QueryCommend {
 		System.out.print("»èÁ¦ÇÒ ºñ¹Ð¹øÈ£ : ");
 		String userPW = scan.next();
 		
-		int result = dao.delete(userID, userPW);
+		int result = dao.delete(lists, userID, userPW);
 		
-		if (result == 1) {
-			System.out.println("È¸¿ø Å»Åð ¼º°ø");
-		} else {
+		if (result == 0) {
 			System.out.println("È¸¿ø Å»Åð ½ÇÆÐ");
+		} else {
+			System.out.println("È¸¿ø Å»Åð ¼º°ø");
+			lists.remove(result);
 		}
+		
+		return lists;
 		
 	}
 

@@ -1,5 +1,6 @@
 package org.java.MemberCommend;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.java.MemberDAO.MemberDAO;
@@ -8,7 +9,7 @@ import org.java.MemberDTO.MemberDTO;
 public class InsertDo implements QueryCommend {
 
 	@Override
-	public void excuteCommend() {
+	public ArrayList<MemberDTO> excuteCommend(ArrayList<MemberDTO> lists) {
 	
 		System.out.println("회원 가입");
 		
@@ -27,16 +28,22 @@ public class InsertDo implements QueryCommend {
 		System.out.print("나이 입력 : ");
 		int userAge = scan.nextInt();
 		
+		int preListSize = lists.size();
+		
 		MemberDTO dto = 
 				new MemberDTO(userID, userPW, userName, userAge);
 		
-		int result = dao.insert(dto);
+		dao.insert(lists, dto);
+				
+		int nowListSize = lists.size();
 		
-		if (result == 1) {
+		if (nowListSize > preListSize) {
 			System.out.println("회원 가입 성공");
 		} else {
 			System.out.println("회원 가입 실패");
 		}
+		
+		return lists;
 		
 	}
 

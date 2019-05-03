@@ -9,11 +9,11 @@ import org.java.MemberDTO.MemberDTO;
 public class SelectDo implements QueryCommend {
 
 	@Override
-	public void excuteCommend() {
+	public ArrayList<MemberDTO> excuteCommend(ArrayList<MemberDTO> lists) {
 		
 		MemberDAO dao = new MemberDAO();
 		
-		ArrayList<MemberDTO> lists = dao.select();
+		//ArrayList<MemberDTO> lists = dao.select();
 		
 		// 반환값이 null이면 데이터베이스 정보가 없고
 		// null이 아니면 데이터베이스 정보가 있다
@@ -33,6 +33,8 @@ public class SelectDo implements QueryCommend {
 				System.out.println("\n------------------");
 			}
 		}
+		
+		return lists;
 		
 	}
 
