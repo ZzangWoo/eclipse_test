@@ -11,7 +11,7 @@ public class DeleteDo implements QueryCommend {
 	@Override
 	public ArrayList<MemberDTO> excuteCommend(ArrayList<MemberDTO> lists) {
 		
-		MemberDAO dao = new MemberDAO();
+		MemberDAO dao = MemberDAO.getInstance();
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.print("삭제할 아이디 : ");

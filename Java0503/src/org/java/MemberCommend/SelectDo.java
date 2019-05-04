@@ -11,7 +11,7 @@ public class SelectDo implements QueryCommend {
 	@Override
 	public ArrayList<MemberDTO> excuteCommend(ArrayList<MemberDTO> lists) {
 		
-		MemberDAO dao = new MemberDAO();
+		MemberDAO dao = MemberDAO.getInstance();
 		
 		//ArrayList<MemberDTO> lists = dao.select();
 		

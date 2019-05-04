@@ -34,7 +34,7 @@ public class ModifyDo implements QueryCommend {
 		int userAge = scan.nextInt();
 		
 		MemberDTO dto = new MemberDTO(userID, userPW, userName, userAge);
-		MemberDAO dao = new MemberDAO();
+		MemberDAO dao = MemberDAO.getInstance();
 		
 		int result = dao.update(lists, dto);
 		

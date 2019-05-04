@@ -13,7 +13,7 @@ public class InsertDo implements QueryCommend {
 	
 		System.out.println("회원 가입");
 		
-		MemberDAO dao = new MemberDAO();
+		MemberDAO dao = MemberDAO.getInstance();
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.print("아이디 입력 : ");

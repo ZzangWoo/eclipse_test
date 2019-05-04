@@ -17,7 +17,7 @@ public class MemberController {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-		MemberDAO dao = new MemberDAO();
+		MemberDAO dao = MemberDAO.getInstance();
 		QueryCommend action = null;
 		
 		boolean bool = false;

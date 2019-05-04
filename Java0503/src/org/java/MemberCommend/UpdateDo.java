@@ -16,7 +16,7 @@ public class UpdateDo implements QueryCommend {
 		System.out.println("회원 수정");
 		// 로그인 이후 데이터베이스의 아이디로 조회하고 (Session이용)
 		// 데이터를 get한 후에 수정
-		MemberDAO dao = new MemberDAO();
+		MemberDAO dao = MemberDAO.getInstance();
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.print("아이디 입력 : ");

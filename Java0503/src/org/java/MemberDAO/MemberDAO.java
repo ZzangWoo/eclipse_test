@@ -6,10 +6,24 @@ import org.java.MemberDTO.MemberDTO;
 
 public class MemberDAO {
 
+	// MemberDAO 클래스의 생성자를 외부에서 호출할 수 없도록 private으로 선언
+	private static MemberDAO dao;
 	private ArrayList<MemberDTO> resultList;
 	
 	public MemberDAO() {
 		System.out.println("DAO");
+	}
+	
+	// getInstance() 메서드를 사용하여 MemberDAO 인스턴스가 이미 생성되어 있는지를 검사하고
+	// 생성되지 않은 상황이라면 생성자를 호출해 인스턴스를 생성하고,
+	// 이미 생성되어 있다면 정적 변수 speaker 변수를 참조하는 인스턴스를 반환한다
+	public static MemberDAO getInstance() {
+		
+		if (dao == null) {
+			dao = new MemberDAO();
+		}
+		return dao;
+		
 	}
 	
 	public ArrayList<MemberDTO> makeArrayList() {
