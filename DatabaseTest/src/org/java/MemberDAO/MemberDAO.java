@@ -13,10 +13,10 @@ public class MemberDAO {
 
 	private static MemberDAO dao;
 	
-	private String dbURL = "jdbc:mysql://192.168.219.122:3306/testDB?useSSL=false&serverTimezone=UTC"
+	private String dbURL = "jdbc:mysql://172.31.26.230:3306/testDB?useSSL=false&serverTimezone=UTC"
 			+ "&allowPublicKeyRetrieval=true";
-	private String hostID = "chang";
-	private String hostPW = "Whdlwns1007!";
+	private String hostID = "team1";
+	private String hostPW = "Daewoo1team!";
 	
 	public MemberDAO() {
 		
